@@ -4,15 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Olivia Van Winkle | Professional e-Portfolio</title>
+
+  <!-- Google Fonts for cursive headers + clean body text -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #fdf2f8;          /* light pink background */
+      /* Sage green vibes */
+      --bg: #f4f7f3;          /* soft sage background */
       --card: #ffffff;        /* white cards */
-      --accent: #f472b6;      /* medium pink */
-      --accent-soft: #fce7f3; /* soft pink */
-      --text-main: #1f2933;
-      --text-muted: #6b7280;
-      --border: #f5d0ea;
+      --accent: #4b7f52;      /* deep sage green */
+      --accent-soft: #dbe7dd; /* light sage */
+      --text-main: #1f2933;   /* dark grey text */
+      --text-muted: #6b7280;  /* muted grey */
+      --border: #c5d5c7;      /* light sage border */
     }
 
     * {
@@ -22,7 +27,7 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
       background: var(--bg);
       color: var(--text-main);
@@ -39,7 +44,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(12px);
-      background: rgba(253, 242, 248, 0.88);
+      background: rgba(244, 247, 243, 0.92);
       border-bottom: 1px solid var(--border);
     }
 
@@ -54,7 +59,7 @@
     }
 
     .logo {
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.08em;
       font-size: 0.95rem;
       text-transform: uppercase;
@@ -97,9 +102,11 @@
     }
 
     .hero-title {
-      font-size: clamp(2.1rem, 4vw, 2.7rem);
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.3rem, 4.2vw, 3rem);
       font-weight: 700;
       margin-bottom: 0.5rem;
+      color: var(--accent);
     }
 
     .hero-subtitle {
@@ -147,12 +154,12 @@
     .btn-primary {
       background: var(--accent);
       color: #fff;
-      box-shadow: 0 12px 25px rgba(244, 114, 182, 0.4);
+      box-shadow: 0 12px 25px rgba(75, 127, 82, 0.35);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 30px rgba(244, 114, 182, 0.55);
+      box-shadow: 0 18px 30px rgba(75, 127, 82, 0.45);
     }
 
     .btn-outline {
@@ -176,7 +183,7 @@
       border-radius: 1.5rem;
       padding: 1.4rem;
       border: 1px solid var(--border);
-      box-shadow: 0 18px 45px rgba(244, 114, 182, 0.18);
+      box-shadow: 0 18px 45px rgba(75, 127, 82, 0.16);
       display: grid;
       grid-template-rows: auto auto;
       gap: 1rem;
@@ -227,8 +234,10 @@
     }
 
     section h2 {
-      font-size: 1.6rem;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.9rem;
       margin-bottom: 0.4rem;
+      color: var(--accent);
     }
 
     .section-subtitle {
@@ -243,7 +252,7 @@
       border-radius: 1.1rem;
       padding: 1.2rem 1.3rem;
       border: 1px solid var(--border);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
       font-size: 0.95rem;
     }
 
@@ -254,12 +263,6 @@
     .card h3 {
       font-size: 1.1rem;
       margin-bottom: 0.4rem;
-    }
-
-    .meta {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
     }
 
     .text-block {
@@ -389,9 +392,10 @@
       <div class="logo">Olivia Van Winkle • e-Portfolio</div>
       <nav class="nav-links">
         <a href="#overview">Overview</a>
-        <a href="#linkedin-resume">LinkedIn &amp; Resume</a>
-        <a href="#philosophy">Personal Philosophy</a>
+        <a href="#linkedin">LinkedIn</a>
         <a href="#cover-letter">Cover Letter</a>
+        <a href="#resume">Resume</a>
+        <a href="#philosophy">Personal Philosophy</a>
         <a href="#job-talk">Job Talk</a>
         <a href="#materials">Additional Materials</a>
         <a href="#contact">Contact</a>
@@ -400,7 +404,7 @@
   </header>
 
   <main>
-    <!-- HERO / OVERVIEW -->
+    <!-- OVERVIEW -->
     <section id="overview" class="hero">
       <div>
         <h1 class="hero-title">Olivia Van Winkle</h1>
@@ -433,7 +437,6 @@
       <aside class="hero-card">
         <div class="hero-card-header">
           <div class="hero-photo">
-            <!-- Your headshot file in this repo -->
             <img src="olivia-photo.jpg" alt="Photo of Olivia Van Winkle" />
           </div>
           <div>
@@ -449,22 +452,22 @@
       </aside>
     </section>
 
-    <!-- LINKEDIN & RESUME -->
-    <section id="linkedin-resume">
-      <h2>LinkedIn &amp; Resume</h2>
+    <!-- LINKEDIN -->
+    <section id="linkedin">
+      <h2>LinkedIn</h2>
       <p class="section-subtitle">
-        My LinkedIn profile and resume summarize my academic pathway, classroom experience,
+        My LinkedIn profile provides a concise overview of my academic journey, teaching experience,
         and leadership roles in education-focused organizations.
       </p>
 
       <div class="card">
-        <h3>LinkedIn Profile</h3>
-        <p class="meta">Requirement 1: LinkedIn profile page highlighting portfolio information.</p>
+        <h3>Professional Profile</h3>
         <div class="text-block">
           <p>
-            My LinkedIn showcases my journey as a Liberal Studies: Elementary Education student,
-            my Child &amp; Family Development minor, leadership roles on campus, and work with
-            children in school, camp, and community settings.
+            On LinkedIn, I highlight my Liberal Studies: Elementary Education major, Child &amp; Family
+            Development minor, and the variety of roles I have held in schools, camp settings, and
+            community programs. It also features my leadership with campus organizations and my
+            commitment to justice-based education.
           </p>
         </div>
         <div class="link-row">
@@ -473,69 +476,6 @@
           </a>
           <a class="chip-link" href="Olivia Van Winkle - LinkedIn Profile PDF .pdf" target="_blank">
             📄 View LinkedIn Profile (PDF)
-          </a>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:1rem;">
-        <h3>Resume</h3>
-        <p class="meta">Requirement 2: Resume including education, work experience, and skills.</p>
-        <div class="text-block">
-          <p>
-            My resume highlights my coursework in Liberal Studies and Child &amp; Family Development,
-            my roles as an Instructional Aide with San Diego Unified School District, Recreation Leader
-            for the City of Garden Grove, Teacher Assistant at SDSU Children’s Center, and my
-            leadership positions in the College of Education, Kappa Delta, and student government.
-          </p>
-        </div>
-        <div class="link-row">
-          <a class="chip-link" href="Olivia Van Winkle’s Resume (1).pdf" target="_blank">
-            📄 View Resume (PDF)
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PERSONAL PHILOSOPHY STATEMENT -->
-    <section id="philosophy">
-      <h2>Personal Philosophy of Teaching &amp; Learning</h2>
-      <p class="section-subtitle">
-        A reflection on justice-based education, human growth and development, and my belief in
-        the potential of every learner, grounded in educational theory.
-      </p>
-
-      <div class="card">
-        <p class="meta">Requirement 3: Personal Philosophy Statement with citations and specific examples.</p>
-        <div class="text-block">
-          <!-- You can swap this for your full text if you want -->
-          <p>
-            Throughout my time within my Liberal Studies program, I have discovered new attributes
-            about myself that have contributed to my views on justice-based education and the effects
-            of a structured environment for students. My multitude of experiences within professional
-            work, certifications, leadership positions, and volunteer opportunities have given me the
-            chance to reflect on my current educational pedagogy and have allowed me to alter my
-            views to strengthen them.
-          </p>
-          <p>
-            I have learned about the importance of collaboration, organization, and passion within the
-            field of education and how each of those strengths have built up my confidence. This
-            directly translates to my own style of educating and leading students ranging from
-            one-on-one instruction to large group settings within a classroom and recreational space.
-            My experience as a day camp leader allowed me to connect with children in a more
-            collaborative and recreational environment in which I was able to build on my skills of
-            fostering positive relationships with children aged 5–17.
-          </p>
-          <p>
-            Another strength I was able to gain has to do with the abilities of many students, as I
-            believe that a student of any ability can be successful with the proper accommodations
-            and modifications. Through my experience as an instructional aide, I was able to work
-            with English language learners and special education students to help them with
-            curriculum in a smaller group setting by utilizing differentiated instruction.
-          </p>
-        </div>
-        <div class="link-row">
-          <a class="chip-link" href="LIB S 498 - Personal Philosophy Statement.pdf" target="_blank">
-            📄 View Full Philosophy Statement (PDF)
           </a>
         </div>
       </div>
@@ -550,9 +490,7 @@
       </p>
 
       <div class="card">
-        <p class="meta">
-          Requirement 4: Cover letter including sender’s address, date, recipient address, salutation, body, closing, and signature.
-        </p>
+        <h3>Garden Grove Unified School District</h3>
         <div class="text-block">
           <p>Olivia Van Winkle</p>
           <p>5066 College Ave</p>
@@ -603,20 +541,98 @@
       </div>
     </section>
 
+    <!-- RESUME -->
+    <section id="resume">
+      <h2>Resume</h2>
+      <p class="section-subtitle">
+        A summary of my education, teaching and childcare experience, and leadership in campus and
+        community organizations.
+      </p>
+
+      <div class="card">
+        <h3>Professional Experience &amp; Education</h3>
+        <div class="text-block">
+          <p>
+            My resume highlights my coursework in Liberal Studies and Child &amp; Family Development,
+            my roles as an Instructional Aide with San Diego Unified School District, Recreation Leader
+            for the City of Garden Grove, Teacher Assistant at SDSU Children’s Center, and my
+            leadership positions in the College of Education, Kappa Delta, and student government.
+          </p>
+          <p>
+            Across these experiences, I have worked with diverse learners in academic and recreational
+            settings, collaborated with colleagues and families, and developed skills in lesson planning,
+            classroom management, and relationship-building.
+          </p>
+        </div>
+        <div class="link-row">
+          <a class="chip-link" href="Olivia Van Winkle’s Resume (1).pdf" target="_blank">
+            📄 View Resume (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONAL PHILOSOPHY -->
+    <section id="philosophy">
+      <h2>Personal Philosophy</h2>
+      <p class="section-subtitle">
+        A reflection on justice-based education, human growth and development, and my belief in
+        the potential of every learner, grounded in educational theory.
+      </p>
+
+      <div class="card">
+        <h3>Teaching &amp; Learning</h3>
+        <div class="text-block">
+          <p>
+            Throughout my time within my Liberal Studies program, I have discovered new attributes
+            about myself that have contributed to my views on justice-based education and the effects
+            of a structured environment for students. My multitude of experiences within professional
+            work, certifications, leadership positions, and volunteer opportunities have given me the
+            chance to reflect on my current educational pedagogy and have allowed me to alter my
+            views to strengthen them.
+          </p>
+          <p>
+            I have learned about the importance of collaboration, organization, and passion within the
+            field of education and how each of those strengths have built up my confidence. This
+            directly translates to my own style of educating and leading students ranging from
+            one-on-one instruction to large group settings within a classroom and recreational space.
+            My experience as a day camp leader allowed me to connect with children in a more
+            collaborative and recreational environment in which I was able to build on my skills of
+            fostering positive relationships with children aged 5–17.
+          </p>
+          <p>
+            Another strength I was able to gain has to do with the abilities of many students, as I
+            believe that a student of any ability can be successful with the proper accommodations
+            and modifications. Through my experience as an instructional aide, I was able to work
+            with English language learners and special education students to help them with
+            curriculum in a smaller group setting by utilizing differentiated instruction.
+          </p>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.8rem;">
+            Full statement and references are available in the PDF version below.
+          </p>
+        </div>
+        <div class="link-row">
+          <a class="chip-link" href="LIB S 498 - Personal Philosophy Statement.pdf" target="_blank">
+            📄 View Full Philosophy Statement (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- JOB TALK -->
     <section id="job-talk">
-      <h2>3-Minute Job Talk</h2>
+      <h2>Job Talk</h2>
       <p class="section-subtitle">
-        In this short presentation, I introduce who I am as an educator, highlight my teaching
+        A brief presentation where I introduce who I am as an educator, highlight my teaching
         philosophy, and share key experiences that have prepared me for the classroom.
       </p>
 
       <div class="card">
-        <p class="meta">Requirement 5: Recorded 3-minute presentation (“Job Talk” style).</p>
+        <h3>3-Minute Presentation</h3>
         <div class="text-block">
           <p>
             Once my Job Talk is recorded and uploaded, it will appear here for potential employers
-            to watch. In the video, I summarize my philosophy, experiences in camp and classroom
+            and colleagues to watch. In the video, I summarize my philosophy, experiences in camp and classroom
             settings, and the commitments I bring to a future school community.
           </p>
         </div>
@@ -641,7 +657,7 @@
       </p>
 
       <div class="card">
-        <p class="meta">Requirement 6: Additional materials showing desire to become a teacher and experience with learners.</p>
+        <h3>Teaching &amp; Program Artifacts</h3>
 
         <div class="materials-grid">
           <!-- Camp Grove 2025 -->
@@ -719,12 +735,12 @@
       </p>
 
       <div class="card">
-      <ul class="contact-list">
-  <li>Email: <a href="mailto:oliviavw16@gmail.com">oliviavw16@gmail.com</a></li>
-  <li>Phone: <a href="tel:+17149161926">(714) 916-1926</a></li>
-  <li>LinkedIn: <a href="https://www.linkedin.com/in/oliviavanwinkle" target="_blank" rel="noopener">
-    linkedin.com/in/oliviavanwinkle</a></li>
-</ul>
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:oliviavw16@gmail.com">oliviavw16@gmail.com</a></li>
+          <li>Phone: <a href="tel:+17149161926">(714) 916-1926</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/oliviavanwinkle" target="_blank" rel="noopener">
+            linkedin.com/in/oliviavanwinkle</a></li>
+        </ul>
       </div>
     </section>
 
