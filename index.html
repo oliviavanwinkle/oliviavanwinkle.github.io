@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olivia Van Winkle | Professional e-Portfolio</title>
+  <style>
+    :root {
+      --bg: #fdf2f8;          /* light pink background */
+      --card: #ffffff;        /* white cards */
+      --accent: #f472b6;      /* medium pink */
+      --accent-soft: #fce7f3; /* soft pink */
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --border: #f5d0ea;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text-main);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(253, 242, 248, 0.88);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.9rem 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    }
+
+    .nav-links a:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.8rem 1.3rem 2.8rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+      gap: 2.2rem;
+      align-items: center;
+      padding: 2.5rem 0 2rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.7rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .btn {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: transform 0.12s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 12px 25px rgba(244, 114, 182, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 30px rgba(244, 114, 182, 0.55);
+    }
+
+    .btn-outline {
+      background: #fff;
+      border-color: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+    }
+
+    .hero-note {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card {
+      background: var(--card);
+      border-radius: 1.5rem;
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 45px rgba(244, 114, 182, 0.18);
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+
+    .hero-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent-soft);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-card-header h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-card-header p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card ul {
+      list-style: disc;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Sections */
+    section {
+      margin-top: 3rem;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+      max-width: 720px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 1.1rem;
+      padding: 1.2rem 1.3rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      font-size: 0.95rem;
+    }
+
+    .card + .card {
+      margin-top: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .meta {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .text-block {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .text-block p + p {
+      margin-top: 0.7rem;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    .chip-link {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: #fff;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.86rem;
+      transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    }
+
+    .chip-link:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+
+    .material-item {
+      background: var(--card);
+      border-radius: 0.9rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--accent-soft);
+      font-size: 0.9rem;
+    }
+
+    .material-item h4 {
+      font-size: 0.98rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .material-item p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* Job Talk */
+    .video-wrapper {
+      margin-top: 0.8rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--accent-soft);
+      background: #000;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-wrapper iframe,
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-list a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">Olivia Van Winkle • e-Portfolio</div>
+      <nav class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#linkedin-resume">LinkedIn &amp; Resume</a>
+        <a href="#philosophy">Personal Philosophy</a>
+        <a href="#cover-letter">Cover Letter</a>
+        <a href="#job-talk">Job Talk</a>
+        <a href="#materials">Additional Materials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / OVERVIEW -->
+    <section id="overview" class="hero">
+      <div>
+        <h1 class="hero-title">Olivia Van Winkle</h1>
+        <p class="hero-subtitle">
+          Liberal Studies: Elementary Education student with a Child &amp; Family Development minor,
+          committed to justice-based education and creating joyful, inclusive learning environments.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">Liberal Studies</span>
+          <span class="tag">Future Elementary Teacher</span>
+          <span class="tag">Justice-Based Education</span>
+        </div>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#job-talk">
+            ▶ Watch My 3-Minute Job Talk
+          </a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/oliviavanwinkle" target="_blank" rel="noopener">
+            🔗 View My LinkedIn
+          </a>
+        </div>
+
+        <p class="hero-note">
+          This digital portfolio highlights my teaching philosophy, professional documents, and key
+          learning experiences that have shaped me as an educator.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-photo">
+            <!-- Replace "olivia-photo.jpg" with the filename of your actual photo -->
+            <img src="olivia-photo.jpg" alt="Photo of Olivia Van Winkle" />
+          </div>
+          <div>
+            <h3>Olivia Van Winkle</h3>
+            <p>Future Elementary Teacher · San Diego State University</p>
+          </div>
+        </div>
+        <ul>
+          <li>Experience as a recreation day camp leader, instructional aide, and teacher assistant.</li>
+          <li>Leadership in the College of Education, Kappa Delta, and student organizations.</li>
+          <li>Passionate about collaboration, equity, and supporting diverse learners.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- LINKEDIN & RESUME -->
+    <section id="linkedin-resume">
+      <h2>LinkedIn &amp; Resume</h2>
+      <p class="section-subtitle">
+        My LinkedIn profile and resume summarize my academic pathway, classroom experience,
+        and leadership roles in education-focused organizations.
+      </p>
+
+      <div class="card">
+        <h3>LinkedIn Profile</h3>
+        <p class="meta">Requirement 1: LinkedIn profile page highlighting portfolio information.</p>
+        <div class="text-block">
+          <p>
+            My LinkedIn showcases my journey as a Liberal Studies: Elementary Education student,
+            my Child &amp; Family Development minor, leadership roles on campus, and work with
+            children in school, camp, and community settings.
+          </p>
+        </div>
+        <div class="link-row">
+          <a class="chip-link" href="https://www.linkedin.com/in/oliviavanwinkle" target="_blank" rel="noopener">
+            🔗 Open LinkedIn Profile
+          </a>
+          <!-- Optional: PDF version of LinkedIn -->
+          <a class="chip-link" href="Olivia-Van-Winkle-LinkedIn-Profile.pdf" target="_blank">
+            📄 View LinkedIn Profile (PDF)
+          </a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1rem;">
+        <h3>Resume</h3>
+        <p class="meta">Requirement 2: Resume including education, work experience, and skills.</p>
+        <div class="text-block">
+          <p>
+            My resume highlights my coursework in Liberal Studies and Child &amp; Family Development,
+            my roles as an Instructional Aide with San Diego Unified School District, Recreation Leader
+            for the City of Garden Grove, Teacher Assistant at SDSU Children’s Center, and my
+            leadership positions in the College of Education, Kappa Delta, and student government.
+          </p>
+        </div>
+        <div class="link-row">
+          <a class="chip-link" href="Olivia-Van-Winkle-Resume.pdf" target="_blank">
+            📄 View Resume (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONAL PHILOSOPHY STATEMENT -->
+    <section id="philosophy">
+      <h2>Personal Philosophy of Teaching &amp; Learning</h2>
+      <p class="section-subtitle">
+        A reflection on justice-based education, human growth and development, and my belief in
+        the potential of every learner, grounded in educational theory.
+      </p>
+
+      <div class="card">
+        <p class="meta">Requirement 3: Personal Philosophy Statement with citations and specific examples.</p>
+        <div class="text-block">
+          <p>
+            Throughout my time within my Liberal Studies program, I have discovered new attributes
+            about myself that have contributed to my views on justice-based education and the effects
+            of a structured environment for students. My multitude of experiences within professional
+            work, certifications, leadership positions, and volunteer opportunities have given me the
+            chance to reflect on my current educational pedagogy and have allowed me to alter my
+            views to strengthen them. I have learned about the importance of collaboration,
+            organization, and passion within the field of education and how each of those strengths
+            have built up my confidence. This directly translates to my own style of educating and
+            leading students ranging from one-on-one instruction to large group settings within a
+            classroom and recreational space. My experience as a day camp leader allowed me to
+            connect with children in a more collaborative and recreational environment in which I was
+            able to build on my skills of fostering positive relationships with children aged 5–17.
+            Building these connections within my career helped build onto my job as an Instructional
+            Aide for San Diego Unified School District in which I was able to lead small groups and
+            one-on-one instruction in a more academic setting. My experiences in both a flexible
+            environment of camp as well as an intentional environment of classroom-based instruction
+            have allowed me to become a more well-rounded educator with students of all ages.
+            Similar to Dewey’s perspective of connecting to students’ lived experiences rather than
+            only viewing them academically, I believe in viewing the student’s social, physical, and
+            emotional experiences as well. (Dewey, 1938)
+          </p>
+          <p>
+            Another strength I was able to gain has to do with the abilities of many students, as I
+            believe that a student of any ability can be successful with the proper accommodations
+            and modifications. Through my experience as an instructional aide, I was able to work
+            with English language learners and special education students to help them with
+            curriculum in a smaller group setting by utilizing differentiated instruction. Similar to
+            Vygotsky’s philosophical pedagogy in regards to guided support and how social settings
+            contribute to a child’s learning, I believe the same about differentiated and individualized
+            instruction. (Vygotsky, 1978) Whether that was explaining the instructions more in depth
+            or scaffolding materials to allow for them to comprehend the material in a different way,
+            I used my strengths of patience and problem solving to assist them in learning the same
+            material as their fellow classmates.
+          </p>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.8rem;">
+            <strong>References:</strong><br />
+            Dewey, J. (1938). <em>Experience and education</em>.<br />
+            Vygotsky, L. S. (1978). <em>Mind in society: The development of higher psychological processes</em>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COVER LETTER -->
+    <section id="cover-letter">
+      <h2>Cover Letter</h2>
+      <p class="section-subtitle">
+        A sample cover letter for a 3rd grade teaching position in Garden Grove Unified School District,
+        connecting my experience and values to the district’s vision.
+      </p>
+
+      <div class="card">
+        <p class="meta">
+          Requirement 4: Cover letter including sender’s address, date, recipient address, salutation, body, closing, and signature.
+        </p>
+        <div class="text-block">
+          <p>Olivia Van Winkle</p>
+          <p>5066 College Ave</p>
+          <p>San Diego, CA 92115</p>
+          <p>(714) 916-1926</p>
+          <p>oliviavanwinkle@yahoo.com</p>
+          <br />
+          <p>November 29, 2025</p>
+          <br />
+          <p>Personnel Services</p>
+          <p>Garden Grove Unified School District</p>
+          <p>10331 Stanford Ave</p>
+          <p>Garden Grove, CA 92840</p>
+          <br />
+          <p>To whom it may concern at Garden Grove Unified School District,</p>
+          <p>
+            I am so honored to be applying for the 3rd Grade Teaching position within the Garden Grove
+            Unified School District. I have a huge passion for working with groups of diverse students,
+            and currently obtain my Bachelors of Arts in Liberal Studies with an emphasis in Elementary
+            Education and a minor in Child &amp; Family Development. I understand the importance of the
+            “Garden Grove Way” and am passionate about the implementation of the goals that have
+            been set in place since I was a student within this same school district.
+          </p>
+          <p>
+            As a current teaching credential candidate with previous substitute teaching experience from
+            the past year, as well as my diverse experience of working with special education and English
+            language learners, I exhibit patience and passion when working with students of all ages.
+            Along with this, I also have had the opportunity of working with students in recreational
+            settings as well such as Day Camp programs which allow me to understand how children’s
+            minds work outside of an academically structured environment.
+          </p>
+          <p>
+            With my passionate and determined personality, I always work to make myself better whether
+            that is in my personal or professional life. This includes my want to constantly improve on any
+            new project or career I may take on. Garden Grove Unified School District's vision discusses
+            preparing students to be successful in diverse communities, and as a homegrown product of
+            the district, I am proud to have the opportunity to uphold the mission that brought me back to
+            the community.
+          </p>
+          <p>Sincerely,</p>
+          <p>Olivia Van Winkle</p>
+        </div>
+        <div class="link-row">
+          <a class="chip-link" href="Olivia-Van-Winkle-Cover-Letter.pdf" target="_blank">
+            📄 View Cover Letter (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOB TALK -->
+    <section id="job-talk">
+      <h2>3-Minute Job Talk</h2>
+      <p class="section-subtitle">
+        In this short presentation, I introduce who I am as an educator, highlight my teaching
+        philosophy, and share key experiences that have prepared me for the classroom.
+      </p>
+
+      <div class="card">
+        <p class="meta">Requirement 5: Recorded 3-minute presentation (“Job Talk” style).</p>
+        <div class="text-block">
+          <p>
+            Once my Job Talk is recorded and uploaded, it will appear here for potential employers
+            to watch. In the video, I summarize my philosophy, experiences in camp and classroom
+            settings, and the commitments I bring to a future school community.
+          </p>
+        </div>
+
+        <div class="video-wrapper">
+          <!-- When your Job Talk is on YouTube or similar, replace VIDEO-ID-HERE with your video ID -->
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO-ID-HERE"
+            title="Job Talk - Olivia Van Winkle"
+            allowfullscreen>
+          </iframe>
+
+          <!-- Or, if you host the file directly, you can use:
+          <video controls>
+            <source src="Olivia-Van-Winkle-Job-Talk.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ADDITIONAL MATERIALS -->
+    <section id="materials">
+      <h2>Additional Materials</h2>
+      <p class="section-subtitle">
+        Lesson plans, programs, and activities that demonstrate my desire to become a teacher
+        and my experience working with a variety of learners.
+      </p>
+
+      <div class="card">
+        <p class="meta">Requirement 6: Additional materials showing desire to become a teacher and experience with learners.</p>
+
+        <div class="materials-grid">
+          <!-- Camp Grove 2025 -->
+          <div class="material-item">
+            <h4>Camp Grove 2025 – Wild West Week</h4>
+            <p>
+              A detailed schedule and activity plan for a Wild West–themed day camp, including crafts,
+              games, movement activities, and collaborative experiences for campers ages 5–12.
+            </p>
+            <a class="chip-link" href="Camp-Grove-2025.pdf" target="_blank">
+              📄 View Camp Grove Plan
+            </a>
+          </div>
+
+          <!-- Memory Jars Lesson Plan -->
+          <div class="material-item">
+            <h4>“Memory Jars” ELA Lesson Plan (Grade 2)</h4>
+            <p>
+              An English Language Arts lesson focused on theme, character challenges, and imagery,
+              culminating in students creating illustrated “memory jars” that represent meaningful
+              moments in their lives.
+            </p>
+            <a class="chip-link" href="Memory-Jars-Lesson-Plan.pdf" target="_blank">
+              📄 View Lesson Plan
+            </a>
+          </div>
+
+          <!-- Individual Lesson Plan (Lib S 300) -->
+          <div class="material-item">
+            <h4>Individual Lesson Plan – “There Was an Old Lady…”</h4>
+            <p>
+              A 2nd grade ELA lesson using a read-aloud of <em>There Was an Old Lady Who Swallowed a Fly</em>
+              to explore rhyme, repetition, opinions, and balanced literacy through interactive
+              puppets and writing.
+            </p>
+            <a class="chip-link" href="Olivia-Van-Winkle-Individual-Lesson-Plan.pdf" target="_blank">
+              📄 View Lesson Plan
+            </a>
+          </div>
+
+          <!-- KINE 200 Movement Lesson Plans -->
+          <div class="material-item">
+            <h4>KINE 200 – Movement Lesson Plans</h4>
+            <p>
+              A set of physical education lesson plans for primary grades focused on jumping, kicking,
+              and balance, emphasizing progression, safety, collaboration, and positive feedback.
+            </p>
+            <a class="chip-link" href="KINE-200-Movement-Lesson-Plans.pdf" target="_blank">
+              📄 View KINE 200 Plans
+            </a>
+          </div>
+
+          <!-- Clay Elementary Girls Club -->
+          <div class="material-item">
+            <h4>Clay Elementary Girls’ Club – “Spreading Positivity”</h4>
+            <p>
+              An activity plan for a girls’ leadership club session using games like Telephone and
+              collaborative drawing to address gossip, positivity, and building a supportive school
+              community.
+            </p>
+            <a class="chip-link" href="Clay-Elementary-Girls-Club-Positivity.pdf" target="_blank">
+              📄 View Activity Plan
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="section-subtitle">
+        Please feel free to reach out if you have questions about my experience, teaching
+        philosophy, or potential opportunities.
+      </p>
+
+      <div class="card">
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:oliviavw16@gmail.com">oliviavw16@gmail.com</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/oliviavanwinkle" target="_blank" rel="noopener">
+            linkedin.com/in/oliviavanwinkle</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Olivia Van Winkle • Professional e-Portfolio
+    </footer>
+  </main>
+
+  <script>
+    // Set current year in footer automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
